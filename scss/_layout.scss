@@ -1,0 +1,779 @@
+// header 영역
+#header {
+    width: 100%;
+    display: flex; justify-content: center;
+    position: absolute; bottom: -35px;
+    z-index: 99;
+    .center {
+        width: 59%;
+        display: flex; justify-content: center;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        position: relative;
+        transition: all 0.5s;
+        .gnb {
+            display: flex; justify-content: center;
+            > li {
+                font-size: 12px;
+                margin: 0 25px;
+                line-height: 70px;
+                box-sizing: border-box;
+                > a {color: #000;}
+            }
+            > li.color {
+                
+                > a {
+                    background-color: #dc3545;
+                    padding: 15px;
+                    border-radius: 25px;
+                    color: #fff;
+                }
+            }
+        }
+        .menu {
+            position: absolute; right: 50px; top: 50%;
+            transform: translateY(-50%);
+            width: 3%;
+            cursor: pointer;
+            .bar {
+                width: 70%; height: 1px; background-color: #000;
+                margin: 0 auto;
+                margin-bottom: 5px;
+                transition: all 0.5s;
+                
+                &:nth-child(2){
+                    width: 100%;
+                }
+                &:nth-child(3){
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .menu.close {
+            .bar {
+                position: relative;
+                &:nth-child(1){
+                    transform: rotate(-45deg);
+                    top: 3px;
+                }
+                &:nth-child(3){
+                    transform: rotate(45deg);
+                    top: -3px;
+                }
+                &:nth-child(2){display: none;}
+            }
+        }
+    }
+}
+#header.fixed {
+    position: fixed; top: 0; bottom: unset;
+    .center {
+        width: 100%; border-radius: 0;
+    }
+}
+// mobileMenu 영역
+.mobileMenu {
+    width: 20%; height: 100vh; background-color: #dc3545;
+    position: fixed; right: -100%; top: 0;
+    cursor: pointer;
+    transition: all 0.5s;
+    .x {
+        width: 100%; height: 90px;
+        padding-top: 40px;
+        text-align: right;
+        .bar {
+            width: 10%; height: 2px; background-color: #fff;
+            margin-left: 80%;
+            &:first-child {
+                transform: rotate(45deg); position: relative;
+                top: 2px;
+            }
+            &:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    .M-menus {
+        padding-left: 80px;
+        margin-bottom: 303px;
+        > li {
+            margin-bottom: 32px; font-weight: 300;
+            
+            > a {
+                color: #fff;
+            }
+        }
+        > li.pointer {
+            &::before {
+                content: ">"; display: inline-block;
+                color: #fff; position: relative;
+                left: -11px;
+            }
+        }
+    }
+    .m-footer {
+        padding-left: 80px;
+        .m-sns {
+            display: flex;
+            li {
+                margin: 0 13px;
+                margin-bottom: 33px;
+                a {color: #fff;}
+            }
+        }
+        .made {
+            font-size: 10px; line-height: 25px; color: #fff;
+        }
+    }
+}
+
+// container 영역
+#container{
+    // cont1 영역
+    .profile {
+        width: 100%; height: 100vh;
+        background-image: url(../img/banner.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        .bg {
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, rgba(255,214,104,0.7) 0%, rgba(255,96,146,0.7) 100%);
+            display: flex; justify-content: center; align-items: center;
+            .center {
+                text-align: center;
+                .person {
+                    img {
+                        width: 200px; height: 200px; border-radius: 50%;
+                        border: 5px solid #fff; box-sizing: border-box;
+                    }
+                }
+                .name {
+                    margin: 42px 0 10px; font-size: 40px; color: #fff;
+                }
+                .typing {
+                    width: 500px; height: 30px;
+                    color: #fff; font-size: 30px;
+                    .text {
+                        &::after {
+                            content: ""; display: inline-block; width: 3px; height: 28px; background-color: #fff;
+                            position: relative; top: 1px;
+                            animation-name: typing_bar;
+                            animation-duration: 0.6s;
+                            animation-iteration-count: infinite;   
+                            @keyframes typing_bar {
+                                0% {opacity: 1;}
+                                100% {opacity: 0;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // cont2 영역
+    .creativity {
+        height: 100vh;
+        // background-color: pink;
+        .textBox {
+            text-align: center;
+            padding: 122px 0 50px;
+            h2 {
+                font-size: 14px;
+                color: #e13545;
+                margin-bottom: 35px;
+                font-weight: 400;
+            }
+            .title {
+                font-size: 37px;
+                margin-bottom: 40px;
+                font-weight: 300;
+            }
+            .text {
+                font-size: 11px;
+                line-height: 26px;
+            }
+        }
+        .sideBox {
+            display: flex; justify-content: space-between;
+            align-items: center;
+            transition: all 0.5s;
+
+            > div {
+                width: 45%;
+                // position: relative;
+            }
+            .leftBox {
+                transform: translateX(-100%); transition: all 0.5s;
+                // left: -100%;
+                > img {width: 100%;}
+            }
+            .rightBox {
+                transform: translateX(100%); transition: all 0.5s;
+                // right: -100%;
+                .list {
+                    display: flex;
+                    margin-bottom: 40px;
+
+                    &:last-child {margin-bottom: 0;}
+
+                    span {
+                        margin-right: 13px;
+                        color: #dc3545;
+                        font-size: 40px;
+                        position: relative;
+                        top: -4px;
+                    }
+                    .listText {
+                        h3 {
+                            font-size: 24px;
+                            margin-bottom: 15px;
+                            font-weight: 400;
+                        }
+                        p {
+                            font-size: 13px;
+                            line-height: 26px;
+                        }
+                    }
+                }
+            }
+        }
+        .sideBox.show {
+            > div {
+                transform: translateX(0);
+            }
+            // .leftBox {left: 0;}
+            // .rightBox {right: 0;}
+        }
+    }
+
+    // cont3 영역
+    .achievement {
+        background-color: #f6f6f6;
+        display: flex; justify-content: center;
+        .center {
+            width: 59%; // 1140px
+            // background-color: pink;
+            text-align: center;
+            h2 {
+                font-size: 14px;
+                color: #e13545;
+                margin: 123px 0 37px;
+                font-weight: 400;
+            }
+            > p {
+                font-size: 37px;
+                color: #18191d;
+                margin-bottom: 58px;
+            }
+            .boxWrap {
+                display: flex; justify-content: space-between;
+                .box {
+                    width: 19%; // 220px
+                    background-color: #fff;
+                    padding: 25px 0;
+                    border-radius: 5px;
+                    transition: all 0.3s;
+                    margin-bottom: 120px;
+                    cursor: pointer;
+                    span {
+                        margin-bottom: 17px;
+                        font-size: 48px;
+                        // color: #e13545;
+                        color: #dc3545;
+                        // font-weight: bold;
+                    }
+                    
+                    .nummber {
+                        font-size: 24px;
+                        color: #6b6866;
+                        margin-bottom: 19px;
+                    }
+                    p {
+                        font-size: 12px;
+                        color: #18191d;
+                        // font-weight: bold;
+                    }
+
+                    &:hover {
+                        background-color: #dc3545;
+                        > span, > p {color: #fff;}
+                    }
+                }
+            }
+        }
+    }
+
+    // cont4 영역
+    .basicInfo {
+        display: flex; justify-content: space-between;
+        align-items: center;
+        > div {width: 50%;}
+        .left {
+            padding-left: 95px;
+            h2 {
+                font-size: 14px;
+                color: #e13545;
+                margin-bottom: 35px;
+                font-weight: 400;
+            }
+            .title {
+                font-size: 37px;
+                margin-bottom: 40px;
+                font-weight: 300;
+            }
+            .text {
+                font-size: 11px;
+                line-height: 26px;
+            }
+        }
+        .right {
+            img {width: 100%}
+        }
+    }
+
+    // cont5 영역
+    .agency {
+        display: flex; justify-content: center;
+        .center {
+            width: 57%; height: 555px;
+            display: flex; align-items: center;
+            justify-content: space-between;
+            > div {width: 50%;}
+            .left {
+                h2 {
+                    font-size: 14px;
+                    color: #e13545;
+                    margin-bottom: 35px;
+                    font-weight: 400;
+                }
+                .title {
+                    font-size: 37px;
+                    margin-bottom: 40px;
+                    font-weight: 300;
+                }
+                .text {
+                    font-size: 11px;
+                    line-height: 26px;
+                    color: #535358;
+                }
+                .btn {
+                    display: block;
+                    margin-top: 37px;
+                    color: #fff;
+                    width: 145px;
+                    line-height: 45px;
+                    background-color: #dc3545;
+                    text-align: center;
+                    border-radius: 20px;
+                }
+            }
+            .right {
+                .agencyImg {width: 100%;}
+            }
+        }
+    }
+
+    // cont6 영역
+    .designFor {
+        height: 500px;
+        display: flex; align-items: center;
+        position: relative;
+        .icon {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 50px;
+            background-color:#fff;
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            display: flex; align-items: center;
+            i {
+                margin-left: 25px;
+                color: #dccf35;
+            }
+        }
+        > div {width: 50%;}
+        .left {
+            height: 100%;
+            background-image: url(../img/video-bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .right {
+            background-color: #dc3545;
+            height: 100%;
+            color: #fff;
+            padding-left: 165px;
+            box-sizing: border-box;
+            h2 {
+                margin: 200px 0 48px;
+                font-size: 47px; line-height: 57px;
+                font-weight: lighter;
+            }
+            .text {font-size: 12px; line-height: 26px;}
+        }
+    }
+
+    // cont7 영역
+    .work {
+        display: flex; justify-content: center;
+        padding-bottom: 120px;
+        .center {
+            width: 57%;
+            .textBox {
+                text-align: center;
+                margin: 120px 0 47px;
+                h2 {
+                    font-size: 14px;
+                    color: #e13545;
+                    margin-bottom: 35px;
+                    font-weight: 400;
+                }
+                .title {
+                    font-size: 37px;
+                    margin-bottom: 40px;
+                    font-weight: 300;
+                }
+                .text {
+                    font-size: 11px;
+                    line-height: 26px;
+                    color: #535358;
+                }
+            }
+            .workBtn {
+                display: flex; justify-content: center;
+                margin-bottom: 60px;
+                li {
+                    &::after {
+                        content: ""; display: inline-block;
+                        width: 3px; height: 18px; background-color: #ececec;
+                        margin: 0 18px; position: relative; top: 3px;    
+                    }
+                    a {color: #535358; font-size: 12px;}
+                    &:last-child {
+                        &::after {opacity:0;}
+                    }
+                }
+                li.show {
+                    a {color: #dc3545;}
+                }
+            }
+            .workWrap {
+                display: flex; flex-wrap: wrap;
+                .workBox {
+                    width: 31.333333%; margin: 1%;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 95%; height: 95%;
+                        background-color: rgba(255,214,104,0.7);
+                        position: absolute; left: 50%; top: 50%;
+                        transform: translate(-50%,-50%);
+                        opacity: 0; transition: all 0.5s;
+                    }
+                    a {
+                        img {width: 100%; height: 100%;}
+                    }
+                    .textBox {
+                        text-align: center; color: #dc3545;
+                        position: absolute; left: 50%; top: 0;
+                        transform: translate(-50%,0);
+                        display: flex; justify-content: center;
+                        align-items: center; opacity: 0;
+                        transition: all 0.5s;
+                        .wrap {
+                            i {font-size: 30px; margin-bottom: 10px;}
+                            h4 {
+                                font-weight: 400; font-size: 16px;
+                                margin-bottom: 10px;
+                            }
+                            p {font-size: 10px;}
+                        }
+                    }
+                    &:hover {
+                        &::before {opacity: 1;}
+                        .textBox {opacity: 1;}
+                    }
+                }
+                .small {height: 262px;}
+                .big {height: 546px;}
+                .bigger {width: 64.666666%; height: 546px;}
+
+                
+            }
+        }
+    }
+
+    // cont8 영역
+    .feedback {
+        width: 100%; height: 645px; background-color: #f2f2f2;  
+        display: flex; justify-content: center;
+        .center {
+            width: 57%; //1100px
+            .textBox {
+                text-align: center; margin-top: 123px;
+                h2 {
+                    font-size: 18px; color: #e13545;
+                    margin-bottom: 25px; font-weight: 400;
+                }
+                p {
+                    font-size: 37px;
+                    margin-bottom: 40px;
+                    font-weight: 300;
+                }
+            }
+            .slideBox {
+                display: flex; justify-content: center;
+                .peopleBtn {
+                    width: 47%;//250px;
+                    display: flex; flex-wrap: wrap;
+                    align-items: center;
+                    > li {
+                        margin: 20px;
+                        > a {
+                            img {
+                                width: 85px; height: 85px;
+                                border-radius: 50%;
+                                box-sizing: border-box;
+                            }
+                        }
+                    }
+                    > li.color {
+                        > a {
+                            img {
+                                border: 5px solid #f1c30f;
+                            }
+                        }
+                    }
+                }
+                .view{
+                    width: 100%;
+                    margin: 0 20px;
+                    overflow: hidden;
+                    .sliderWrap {
+                        width: 800%;
+                        display: flex;
+                        transition: all 0.5s;
+                        .slider {
+                            width: 12.5%; //540%
+                            height: 285px;
+                            background-color: #fff;
+                            border-radius: 10px;
+                            padding: 30px 30px 35px; box-sizing: border-box;
+                            .p_top {
+                                font-size: 30px; color: #acacac; font-weight: 700;
+                                margin-bottom: 15px;
+                            }
+                            .mainText{
+                                margin-bottom: 20px; font-size: 11px;
+                                line-height: 2.2;
+                            }
+                            .people {
+                                display: flex; align-items: center;
+                                .peopleImg{
+                                    img {
+                                        width: 60px; height: 60px; border-radius: 50%;
+                                        margin-right: 10px;
+                                    }
+                                }
+                                .nameAndJob {
+                                    .name {
+                                        margin-bottom: 10px;
+                                    }
+                                    .job {
+                                        font-size: 11px; color: #8f8f8f;
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+    }
+
+    // cont9 영역
+    .blogging {
+        height: 100%;
+        background-color: #f6f6f6;
+        display: flex; justify-content: center;
+        padding-bottom: 120px;
+        .center {
+            width: 57%;
+            .textBox {
+                text-align: center;
+                margin-bottom: 70px;
+                h2 {
+                    font-size: 14px;
+                    color: #e13545;
+                    margin: 123px 0 35px;
+                    font-weight: 400;
+                }
+                .title {
+                    font-size: 37px;
+                    margin-bottom: 40px;
+                    font-weight: 300;
+                }
+                .text {
+                    font-size: 11px;
+                    line-height: 26px;
+                    color: #535358;
+                }
+            }
+            .blogBox {
+                display: flex; justify-content: space-between;
+                align-items: center;
+                > .blog {
+                    width: 49%;
+                    box-shadow: 1px 5px 5px rgba(0,0,0,0.1);
+
+                    img {width: 100%;}
+                    .blogText {
+                        padding: 20px 30px;
+                        box-sizing: border-box;
+                        h3{
+                            font-size: 22px; font-weight: 400;
+                            margin-bottom: 35px;
+                        }
+                        .icons {
+                            display: flex; color: #a5a5a5;
+                            margin-bottom: 30px;
+                            li {
+                                margin-right: 15px;
+                                i {margin-right: 5px;}
+                            }
+                        }
+                        p {
+                            font-size: 11px; line-height: 26px;
+                            color: #5e5853;
+                        }
+                        .btn {
+                            display: block;
+                            margin-top: 37px;
+                            color: #fff;
+                            width: 145px;
+                            line-height: 45px;
+                            background-color: #202020;
+                            text-align: center;
+                            border-radius: 20px;
+                            transition: all 0.3s;
+                            &:hover {
+                                background-color: #dc3545;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // cont10 영역
+    .symbol {
+        height: 270px;
+        // background-color: #5e5853;
+        display: flex; justify-content: center;
+        .symbols {
+            width: 100%;
+            // background-color: skyblue;
+            display: flex; justify-content: center;
+            align-items: center;
+            li {
+                width: 8%;
+                margin: 0 45px;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // cont11 영역
+    .assistance {
+        background-color: #f6f6f6; display: flex; justify-content: center;
+        height: 100vh; padding-bottom: 210px;
+        .center {
+            width: 48%;
+            .textBox {
+                text-align: center;
+                h2 {
+                    font-size: 14px;
+                    color: #e13545;
+                    margin: 120px 0 35px;
+                    font-weight: 400;
+                }
+                .title {
+                    font-size: 37px;
+                    margin-bottom: 40px;
+                    font-weight: 300;
+                }
+                .text {
+                    font-size: 11px;
+                    line-height: 26px;
+                    color: #535358;
+                    margin-bottom: 70px;
+                }
+            }
+            .myForm {
+                #my_form {
+                    display: flex; justify-content: space-between;
+                    flex-wrap: wrap;
+                    > div {
+                        width: 48%; padding-bottom: 45px;
+                        position: relative;
+                    }
+                    input,textarea {
+                        width: 100%; height: 50px;
+                        border-radius: 5px; padding-left: 12px;
+                        border: 1px solid #dcdbdb; box-sizing: border-box;
+
+                        &::placeholder {
+                            color: #6c757d;
+                        }
+                    }
+                    input {
+                        position: relative;
+                    }
+                    textarea {
+                        width: 100%; height: 150px; padding-top: 18px;
+                        margin-bottom: 45px;
+                    }
+                    .msg {
+                        position: absolute; left: 5px; top: 55px; width: 100%;
+                        font-size: 13px;
+                    }
+                    .msg.ok {color: green;}
+                    .msg.no {color: red;}
+                    .formBtn {
+                        display: block; color: #fff; width: 145px;
+                        line-height: 45px; background-color: #dc3545;
+                        text-align: center; border-radius: 20px;
+                        border: none; margin-left: 50%; transform: translateX(-50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// footer 영역
+#footer {
+    display: flex; justify-content: center;
+    margin: 80px 0 74px;
+     
+    .center {
+        width: 18%;
+        text-align: center;
+        .f-sns {
+            display: flex; justify-content: space-around;
+            margin-bottom: 50px;
+            li {
+                a {color: #676767;}
+            }
+        }
+        .made {
+            font-size: 10px; color: #676767;
+        }
+    }
+}
