@@ -915,3 +915,40 @@ body {
   font-size: 10px;
   color: #676767;
 }
+
+@media screen and (max-width: 1200px) {
+  #header .center {
+    width: 80%;
+  }
+  #container .achievement .center {
+    width: 80%;
+  }
+  #container .achievement .center .boxWrap .box {
+    width: 17%;
+  }
+  #container .basicInfo .left {
+    padding-left: 15px;
+  }
+  #container .agency .center {
+    width: 80%;
+  }
+  #container .work .center {
+    width: 80%;
+  }
+  #container .feedback .center {
+    width: 80%;
+  }
+  #container .feedback .center .slideBox .view .sliderWrap .slider {
+    padding: 19px 30px 35px;
+  }
+  #container .feedback .center .slideBox .peopleBtn > li {
+    margin: 8%;
+  }
+  #container .feedback .center .slideBox .peopleBtn > li a img {
+    width: 70px;
+    height: 70px;
+  }
+  #container .blogging .center {
+    width: 80%;
+  }
+}

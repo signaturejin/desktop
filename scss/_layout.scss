@@ -780,5 +780,59 @@
 
 // 반응형
 @media screen and (max-width: 1200px){
-    
+    // header 영역
+    #header {
+        .center {width: 80%;}
+    }
+    // container 영역
+    #container {
+        // cont3 영역
+        .achievement {
+            .center {
+                width: 80%;
+                .boxWrap {
+                    .box {width: 17%;}
+                }
+            }
+        }
+        // cont4 영역
+        .basicInfo {
+            .left {padding-left: 15px;}
+        }
+        // cont5 영역
+        .agency {
+            .center {
+                width: 80%;
+            }
+        }
+        // cont7 영역
+        .work {
+            .center {width: 80%;}
+        }
+        // cont9 영역
+        .feedback {
+            .center {
+                width: 80%;
+                .slideBox {
+                    .view {
+                        .sliderWrap {
+                            .slider {padding: 19px 30px 35px;}
+                        }
+                    }
+                    .peopleBtn {
+                        > li {
+                            margin: 8%;
+                            a {
+                                img {width: 70px; height: 70px;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // cont9 영역
+        .blogging {
+            .center {width: 80%;}
+        }
+    }
 }
