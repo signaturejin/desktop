@@ -557,7 +557,7 @@ body {
   display: block;
   width: 95%;
   height: 95%;
-  background-color: rgba(255, 214, 104, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -571,7 +571,7 @@ body {
 }
 #container .work .center .workWrap .workBox .textBox {
   text-align: center;
-  color: #dc3545;
+  color: #cf1e2d;
   position: absolute;
   left: 50%;
   top: 0;
@@ -655,7 +655,7 @@ body {
   box-sizing: border-box;
 }
 #container .feedback .center .slideBox .peopleBtn > li.color > a img {
-  border: 5px solid #f1c30f;
+  border: 5px solid #ff3232;
 }
 #container .feedback .center .slideBox .view {
   width: 100%;
