@@ -1,6 +1,0 @@
-input란
-name -> 한글만 가능 / 글자 4글자까지
-email -> 저번 표현식대로
-contact -> 숫자만 가능
-subject -> 한글 / 영문 / 숫자 / 특수문자
-message는 아무것도 ㄴㄴ
